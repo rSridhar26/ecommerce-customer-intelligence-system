@@ -125,6 +125,7 @@ Provide an executive-level overview of:
 
 ## 📷 Dashboard Preview
 
+![Dashboard Preview](images/Dashboard.png)
 
 ---
 
