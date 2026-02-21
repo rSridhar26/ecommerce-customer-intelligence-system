@@ -1,178 +1,185 @@
-📊 E-Commerce Customer Intelligence System
-📌 Project Overview
+# 📊 E-Commerce Customer Intelligence System
 
-This project builds a complete end-to-end analytics pipeline to transform raw e-commerce transactional data into business intelligence insights and customer segmentation strategies.
+An end-to-end data analytics project integrating **MySQL, Power BI, and Machine Learning (K-Means Clustering)** to transform raw e-commerce transactional data into business intelligence insights and customer segmentation strategies.
 
-The system integrates:
+---
 
-MySQL for data modeling and SQL analytics
+## 🚀 Project Overview
 
-Power BI for interactive business dashboards
+This project builds a complete analytics pipeline that moves from raw transactional data to strategic business recommendations.
 
-Python (Scikit-Learn) for customer segmentation using K-Means
+The workflow:
 
-The objective is to move beyond descriptive reporting and enable data-driven strategic decision-making.
+Raw Data → SQL Modeling & Analysis → Power BI Dashboard → Customer Segmentation (ML) → Business Insights
 
-🏗 System Architecture
+The objective is to analyze revenue performance, category trends, payment behavior, brand dominance, and customer purchasing patterns across 2021–2022.
 
-Raw Transaction Tables
-→ SQL Cleaning & Aggregation
-→ Analytical Table Creation
-→ Power BI Dashboard
-→ Customer-Level Feature Engineering
-→ K-Means Clustering
-→ Business Recommendations
+---
 
-This layered approach ensures analytical consistency across reporting and modeling.
+## 🛠 Tech Stack
 
-🗂 Dataset Description
+- **Database:** MySQL  
+- **Business Intelligence:** Power BI (DAX, Data Modeling)  
+- **Programming:** Python (Pandas, Scikit-Learn)  
+- **Machine Learning:** K-Means Clustering  
+- **Data Processing:** Feature Engineering, StandardScaler  
 
-The system uses four core datasets:
+---
 
-1️⃣ customer_detail
+## 🏗 System Architecture
 
-Contains customer registration information.
+1. Transactional tables created in MySQL  
+2. Data cleaning and validation performed using SQL  
+3. Analytical table (`ecommerce_sales_data`) built for reporting  
+4. Power BI dashboard developed for executive insights  
+5. Customer-level dataset engineered for ML  
+6. K-Means clustering applied for segmentation  
 
-2️⃣ order_detail
+This layered architecture ensures analytical consistency across reporting and modeling.
 
-Fact table containing transactional records including pricing, discount, quantity, and payment references.
+---
 
-3️⃣ sku_detail
+## 🗂 Dataset Description
 
-Product-level metadata including category, cost of goods sold (COGS), and SKU naming.
+The project uses four primary datasets:
 
-4️⃣ payment_detail
+### 1️⃣ customer_detail
+- Customer ID  
+- Registration date  
 
-Mapping table for payment method types.
+### 2️⃣ order_detail (Fact Table)
+- Order ID  
+- Customer ID  
+- SKU ID  
+- Order date  
+- Quantity ordered  
+- Pricing & discount information  
+- Transaction validity flag  
+- Payment ID  
 
-An analytical table (ecommerce_sales_data) was created by joining these tables to produce a denormalized dataset for BI and ML workflows.
+### 3️⃣ sku_detail
+- SKU name  
+- Category  
+- Base price  
+- Cost of Goods Sold (COGS)  
 
-🧠 SQL Analytics Layer
+### 4️⃣ payment_detail
+- Payment method type  
+
+An analytical table was created by joining these datasets to enable BI and ML workflows.
+
+---
+
+## 🧠 SQL Analytics Layer
 
 Stakeholder-driven business questions were answered using structured SQL queries.
 
-Business Questions Addressed:
+### Key Business Questions
 
-Which month recorded the highest revenue in 2021?
+- Which month recorded the highest revenue in 2021?
+- Which category generated the highest transaction value in 2022?
+- Year-over-year category comparison (2021 vs 2022)
+- Top 5 payment methods in 2022
+- Brand revenue ranking (Samsung, Apple, Sony, Huawei, Lenovo)
 
-Which category generated the highest transaction value in 2022?
+### SQL Techniques Used
 
-Year-over-year category comparison (2021 vs 2022)
+- Common Table Expressions (CTEs)
+- Aggregations (SUM, COUNT DISTINCT)
+- CASE-based brand normalization
+- Conditional filtering (`is_valid = 1`)
+- Year-over-year comparison logic
+- Ranking using ORDER BY + LIMIT
 
-Top 5 payment methods (2022)
+---
 
-Brand revenue ranking (Samsung, Apple, Huawei, Lenovo, Sony)
+## 📊 Power BI Dashboard
 
-SQL Techniques Used:
+### 🎯 Dashboard Objective
 
-CTEs for year comparison
+Provide an executive-level overview of:
 
-CASE statements for brand normalization
+- Revenue trends  
+- Category performance  
+- Brand contribution  
+- Payment behavior  
+- Customer distribution  
 
-Aggregation (SUM, COUNT DISTINCT)
+### 📌 KPI Strip
 
-Valid transaction filtering (is_valid = 1)
+- Total Revenue (After Discount)
+- Revenue Before Discount
+- Total Units Sold
+- Total Customers
+- Net Profit
+- Average Order Value (AOV)
 
-Grouped revenue segmentation
+### 📈 Analytical Views
 
-Ranking using ORDER BY + LIMIT
+- Category revenue over time (2021–2022)
+- Payment method distribution
+- Brand-level analysis
+- Interactive filtering (Brand, SKU, Category, Status, Date, Customer)
 
-📊 Power BI – Executive Dashboard
-Dashboard Objectives
+---
 
-The dashboard provides a high-level executive overview of:
+## 📷 Dashboard Preview
 
-Revenue trends
+*(Insert dashboard screenshot here)*
 
-Category contribution
+---
 
-Brand performance
-
-Payment behavior
-
-Customer distribution
-
-Key KPIs
-
-Total Revenue (After Discount)
-
-Revenue Before Discount
-
-Total Units Sold
-
-Total Customers
-
-Net Profit
-
-Average Order Value (AOV)
-
-Analytical Views
-
-Category revenue over time (2021–2022)
-
-Payment distribution patterns
-
-Brand-level transaction comparison
-
-Interactive filter panel
-
-Dashboard Preview
-
-(Insert screenshot here)
-
-🤖 Machine Learning – Customer Segmentation
+## 🤖 Machine Learning – Customer Segmentation
 
 Customer-level feature engineering was performed to understand purchasing behavior.
 
-Features Engineered:
+### Features Engineered
 
-Registration-to-first-order delay
+- Registration-to-first-order delay
+- Customer lifespan (first to last order)
+- Total units purchased
+- Total revenue contribution
 
-Customer lifespan (first to last order)
+### Preprocessing
 
-Total units purchased
+- Removal of invalid transactions
+- Separation of registration anomaly group
+- StandardScaler normalization
 
-Total revenue contribution
+### Model Applied
 
-Preprocessing:
+- K-Means Clustering (k = 3)
 
-Removal of invalid transactions
+### Segments Identified
 
-Separation of registration anomaly group
+- Loyal High-Value Customers
+- Extreme High Volume Buyers
+- Normal Low Engagement Customers
 
-StandardScaler normalization
+---
 
-Model Used:
+## 📈 Key Insights
 
-K-Means Clustering (k=3)
+- Revenue growth is largely event-driven rather than retention-driven.
+- Mobiles & Tablets dominate overall revenue contribution.
+- Both digital payments and COD show strong usage.
+- A small customer segment contributes disproportionately high revenue.
+- Pre-registered customers show high upside but inconsistent engagement.
 
-Segments Identified:
+---
 
-Loyal High-Value Customers
+## 💼 Business Recommendations
 
-Extreme High Volume Buyers
+1. Reduce reliance on anomaly-driven revenue spikes.
+2. Improve pricing and cost efficiency to stabilize profit margins.
+3. Implement segment-specific retention strategies.
+4. Activate high-potential but low-engagement customers.
+5. Leverage high-performing brands for bundles and upselling.
 
-Normal Low Engagement Customers
+---
 
-📈 Key Insights
+## 📁 Repository Structure
 
-Revenue growth is event-driven rather than retention-driven.
-
-Mobiles & Tablets dominate revenue contribution.
-
-Digital payment adoption is strong alongside COD usage.
-
-A small cluster contributes a disproportionate share of revenue.
-
-Pre-registered customers show high potential but inconsistent engagement.
-
-💼 Business Recommendations
-
-Reduce dependency on anomaly-driven revenue spikes.
-
-Improve pricing and cost structure to stabilize profit margins.
-
-Implement segment-specific retention strategies.
 
 Leverage high-performing brands for bundle and upsell strategies.
 
