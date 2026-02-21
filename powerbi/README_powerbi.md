@@ -218,10 +218,9 @@ This dashboard enables:
 
 ---
 
-# 📷 Dashboard Preview
+## 📷 Dashboard Preview
 
-See `dashboard_preview.png` inside this repository folder.
-
+![E-Commerce Dashboard](dashboard_preview.png)
 ---
 
 # 🎯 Business Impact
