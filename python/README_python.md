@@ -109,7 +109,7 @@ This visually demonstrates behavioral separation between clusters.
 
 ## 📁 Output
 
-The final segmented dataset was exported as: ../data/processed_data/customer_segmentation_output.xlsx
+The final segmented dataset was exported as: ecommerce-customer-intelligence-system/data/processed_data/customer_segmentation_output.xlsx
 
 
 This file can be used for:
