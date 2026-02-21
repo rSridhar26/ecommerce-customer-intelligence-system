@@ -125,7 +125,6 @@ Provide an executive-level overview of:
 
 ## 📷 Dashboard Preview
 
-*(Insert dashboard screenshot here)*
 
 ---
 
@@ -180,7 +179,48 @@ Customer-level feature engineering was performed to understand purchasing behavi
 
 ## 📁 Repository Structure
 
+ecommerce-customer-intelligence-system/
+│
+├── data/
+│ ├── raw_data/
+│ └── processed_data/
+│
+├── sql/
+│ ├── 01_database_creation.sql
+│ ├── 02_data_cleaning.sql
+│ ├── 03_stakeholder_analysis.sql
+│ └── 04_feature_engineering_segmentation.sql
+│
+├── powerbi/
+│ ├── ecommerce_dashboard.pbix
+│ └── dashboard_preview.png
+│
+├── python/
+│ ├── customer_segmentation.ipynb
+│ └── segmented_output.xlsx
+│
+└── README.md
 
-Leverage high-performing brands for bundle and upsell strategies.
 
-Strengthen loyalty engagement programs to sustain revenue.
+---
+
+## 🎯 What This Project Demonstrates
+
+- End-to-end data analytics workflow
+- Database design and SQL querying
+- Business intelligence development
+- Feature engineering for machine learning
+- Customer behavioral segmentation
+- Translation of analytics into strategic decisions
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates a structured analytics system that bridges:
+
+Data Engineering → Business Intelligence → Machine Learning → Business Strategy
+
+It showcases the ability to move from raw transactional data to actionable decision support.
+
+---
